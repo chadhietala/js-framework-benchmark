@@ -39,7 +39,7 @@ export class Main extends Component{
         this.swapRows = this.swapRows.bind(this);
         this.start = 0;
         this.length = 0;
-        
+
         window.app = this;
     }
     printDuration() {
@@ -125,7 +125,7 @@ export class Main extends Component{
                     </div>
                 </div>
             </div>
-            <table className="table table-hover table-striped test-data">
+            <table  style="display: none" className="table table-hover table-striped test-data">
                 <tbody>
                     {rows}
                 </tbody>

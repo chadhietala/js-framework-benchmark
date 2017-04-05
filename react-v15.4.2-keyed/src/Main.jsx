@@ -120,7 +120,7 @@ export class Main extends React.Component{
                     </div>
                 </div>
             </div>
-            <table className="table table-hover table-striped test-data">
+            <table className="table hidden table-hover table-striped test-data">
                 <tbody>
                     {rows}
                 </tbody>

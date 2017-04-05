@@ -37,17 +37,55 @@ const span = <span className="glyphicon glyphicon-remove" aria-hidden="true" noN
 const td = <td className="col-md-6" noNormalize></td>;
 
 function Row({ d, id, selected, deleteFunc, selectFunc }) {
-    return (
-        <tr className={id === selected ? 'danger' : ''}  noNormalize>
-            <td className="col-md-1" noNormalize>{id + ''}</td>
-            <td className="col-md-4" noNormalize>
-                <a onClick={linkEvent(id, selectFunc)} noNormalize>{d.label}</a>
-            </td>
-            <td className="col-md-1"><a onClick={linkEvent(id, deleteFunc)} noNormalize>{ span }</a></td>
-            { td }
-        </tr>
-    )
-} 
+    return (<li class="media">
+          <div class="media-left">
+            <a href="#">
+              <img class="media-object" src="http://lorempixel.com/50/50/" alt="..." />
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">Media heading {d.label}</h4>
+            <button>Like</button>
+            <button>Share</button>
+            <button>Comment</button>
+            <ul class="media-list">
+              <li class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="http://lorempixel.com/25/25" alt="..." />
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4>Chad Hietala</h4>
+                  Wat LulZ
+                </div>
+              </li>
+              <li class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="http://lorempixel.com/25/25" alt="..."/>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4>Bill Hietala</h4>
+                  Wat
+                </div>
+              </li>
+              <li class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="http://lorempixel.com/25/25" alt="..." />
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4>Bob Hietala {d.label}</h4>
+                  Woot
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>)
+}
 
 const onComponentShouldUpdate = {
     onComponentShouldUpdate(lastProps, nextProps) {
@@ -173,7 +211,7 @@ export class Controller extends Component{
                     </div>
                 </div>
             </div>
-            <table className="table table-hover table-striped test-data" noNormalize>
+            <table style="display: none" className="table table-hover table-striped test-data" noNormalize>
                 {createRows(this.state.store, this.delete, this.select)}
             </table>
             { span2 }

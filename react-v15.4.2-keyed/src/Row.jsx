@@ -31,14 +31,54 @@ export class Row extends React.Component {
 
 	render() {
 		let {styleClass, onClick, onDelete, data} = this.props;
-		return (<tr className={styleClass}>
-			<td className="col-md-1">{data.id}</td>
-			<td className="col-md-4">
-				<a onClick={this.onClick}>{data.label}</a>
-			</td>
-			<td className="col-md-1"><a onClick={this.onDelete}><span className="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
-			<td className="col-md-6"></td>
-		</tr>);
+		return (        <li class="media">
+          <div class="media-left">
+            <a href="#">
+              <img class="media-object" src="http://lorempixel.com/50/50/" alt="..." />
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">Media heading {data.label}</h4>
+            <button>Like</button>
+            <button>Share</button>
+            <button>Comment</button>
+            <ul class="media-list">
+              <li class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="http://lorempixel.com/25/25" alt="..." />
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4>Chad Hietala</h4>
+                  Wat LulZ
+                </div>
+              </li>
+              <li class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="http://lorempixel.com/25/25" alt="..."/>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4>Bill Hietala</h4>
+                  Wat
+                </div>
+              </li>
+              <li class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="http://lorempixel.com/25/25" alt="..." />
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4>Bob Hietala {data.label}</h4>
+                  Woot
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>);
 	}
 }
 
